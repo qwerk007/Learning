@@ -17,7 +17,7 @@ public class HibernateUtil {
 
 		FileInputStream fis = null;
 		try {
-			fis = new FileInputStream("/home/ravi/git/Tutorial/Learning/src/main/resources/hibernate.properties");
+			fis = new FileInputStream("/home/qwerk/git/Learning/src/main/resources/hibernate.properties");
 			props.load(fis);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -27,7 +27,9 @@ public class HibernateUtil {
         Configuration configuration = new Configuration();
         //configuration.addFile("D:\\HostingProjects\\HibernateTest\\build\\classes\\student.hbm.xml");
     	//Configuration configuration = new Configuration().configure();
-        configuration.addAnnotatedClass(com.hibernate.entity.Person.class);
+        configuration.addAnnotatedClass(com.hibernate.entity.Users.class);
+        configuration.addAnnotatedClass(com.hibernate.entity.identifier.TableIdentifier.class);
+        configuration.addAnnotatedClass(com.hibernate.entity.Department.class);
     	configuration.setProperties(props);
     	StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
         sessionFactory = configuration.buildSessionFactory(builder.build());
