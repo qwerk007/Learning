@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.hibernate.entity.Address;
 import com.hibernate.entity.Users;
@@ -13,6 +15,7 @@ import com.hibernate.utility.HibernateUtil;
 public class TestUsers {
 
 	public static void main(String[] args) {
+		
 		/*
 		 * Users user = new Users(); user.setId(1); user.setFirstName("Ravi");
 		 * user.setLastName("Gupta"); Address address = new Address();

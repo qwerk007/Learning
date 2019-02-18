@@ -17,7 +17,7 @@ public class HibernateUtil {
 
 		FileInputStream fis = null;
 		try {
-			fis = new FileInputStream("/home/qwerk/git/Learning/src/main/resources/hibernate.properties");
+			fis = new FileInputStream("/home/ravi/git/Learning/src/main/resources/hibernate.properties");
 			props.load(fis);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -30,6 +30,8 @@ public class HibernateUtil {
         configuration.addAnnotatedClass(com.hibernate.entity.Users.class);
         configuration.addAnnotatedClass(com.hibernate.entity.identifier.TableIdentifier.class);
         configuration.addAnnotatedClass(com.hibernate.entity.Department.class);
+        configuration.addAnnotatedClass(com.hibernate.entity.association.Student.class);
+        configuration.addAnnotatedClass(com.hibernate.entity.association.Subjects.class);
     	configuration.setProperties(props);
     	StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
         sessionFactory = configuration.buildSessionFactory(builder.build());
